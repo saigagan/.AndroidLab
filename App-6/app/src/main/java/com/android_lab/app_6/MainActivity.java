@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     Spinner spinner;
     ImageView imageView;
 
-    private Drawable[] imageList = {R.drawable.turtlerock, R.drawable.silversalmoncreek, R.drawable.chilkoottrail,
+    private int[] imageList = {R.drawable.turtlerock, R.drawable.silversalmoncreek, R.drawable.chilkoottrail,
             R.drawable.stmarylake, R.drawable.twinlake, R.drawable.lakemcdonald,
             R.drawable.yukon_charleyrivers, R.drawable.icybay, R.drawable.rainbowlake,
             R.drawable.hiddenlake, R.drawable.chincoteague, R.drawable.umbagog};
@@ -33,9 +33,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-        Toast.makeText(this, "Selected: " + i, Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Selected: " + adapterView.getSelectedItem(), Toast.LENGTH_LONG).show();
 
-
+        imageView.setImageResource(imageList[i]);
     }
 
     @Override
