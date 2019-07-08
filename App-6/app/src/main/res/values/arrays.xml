@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="spinner_values">
+        <item>Turtle Rock</item>
+        <item>Silver Salmon Creek</item>
+        <item>Chilkoot Trail</item>
+        <item>St. Mary Lake</item>
+        <item>Twin Lake</item>
+        <item>Lake McDonald</item>
+        <item>Charley Rivers</item>
+        <item>Icy Bay</item>
+        <item>Rainbow Lake</item>
+        <item>Hidden Lake</item>
+        <item>Chincoteague</item>
+        <item>Lake Umbagog</item>
+    </string-array>
+</resources>
