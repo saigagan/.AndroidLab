@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     private void readContacts() {
         ContentResolver contentResolver = getContentResolver();
-        Cursor c = contentResolver.query(ContactsContract.Contacts.CONTENT_URI, null, null, null, null);
+        Cursor c = contentResolver.query(ContactsContract.Contacts.CONTENT_URI, null, null, null, "upper("+ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME + ") ASC");
 
         if (((c != null) ? c.getCount() : 0) > 0) {
             while (c != null && c.moveToNext()) {
@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 contacts.add(name);
             }
         } else {
-            adapter.add("No Contacts");
+            adapter.add("No Contacts on Your Device");
         }
 
         if (c != null) {
