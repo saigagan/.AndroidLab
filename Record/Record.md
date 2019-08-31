@@ -401,6 +401,18 @@
 
     ![Bundles-activity_confirm.png](Design/Bundles-activity_confirm.png)
   
+  * ### res/values/arrays/xml
+    ```
+      <?xml version="1.0" encoding="utf-8"?>
+      <resources>
+          <string-array name="genders">
+              <item>Male</item>
+              <item>Female</item>
+              <item>Prefer not to say</item>
+          </string-array>
+      </resources>
+    ```
+  
   * ### MainActivity.java
     ```
       package com.android_lab.bundles;
