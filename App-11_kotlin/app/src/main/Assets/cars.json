@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Model S",
+    "launch": "2012",
+    "company": "Tesla",
+    "colors": ["White", "Black"]
+  },
+  {
+    "name": "Model 3",
+    "launch": "2016",
+    "company": "Tesla",
+    "colors": ["White", "Black"]
+  },
+  {
+    "name": "Model X",
+    "launch": "2015",
+    "company": "Tesla",
+    "colors": ["White", "Black"]
+  },
+  {
+    "name": "Model Y",
+    "launch": "2020",
+    "company": "Tesla",
+    "colors": ["White", "Black"]
+  },
+  {
+    "name": "Roadster",
+    "launch": "2020",
+    "company": "Tesla",
+    "colors": ["White", "Black"]
+  }
+]

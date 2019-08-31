@@ -6,6 +6,11 @@ import android.widget.Toast
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
+import org.json.JSONArray
+import java.io.File
+import java.io.InputStreamReader
 
 class MainActivity : AppCompatActivity(), MyAdapter.ClickListener {
 
@@ -13,17 +18,13 @@ class MainActivity : AppCompatActivity(), MyAdapter.ClickListener {
     private lateinit var viewAdapter: RecyclerView.Adapter<*>
     private lateinit var viewManager: RecyclerView.LayoutManager
 
-    private var cars = ArrayList<String>()
+    private var cars = arrayOf<Car>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        cars.add("Model S")
-        cars.add("Model X")
-        cars.add("Model 3")
-        cars.add("Model Y")
-        cars.add("Roadster")
+        cars = readJSON()
 
         viewManager = LinearLayoutManager(this)
         viewAdapter = MyAdapter(cars, this)
@@ -39,6 +40,11 @@ class MainActivity : AppCompatActivity(), MyAdapter.ClickListener {
 
     override fun onClick(position: Int) {
         Toast.makeText(this, "Selected: " + cars.get(position), Toast.LENGTH_LONG).show()
+    }
+
+    fun readJSON(): Array<Car> {
+        val json = assets.open("cars.json").bufferedReader().use { it.readText() }
+        return Gson().fromJson(json, Array<Car>::class.java)
     }
 
 }

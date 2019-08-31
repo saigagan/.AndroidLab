@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class MyAdapter(private val dataset: ArrayList<String>, private val mListener: ClickListener): RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
+class MyAdapter(private val dataset: Array<Car>, private val mListener: ClickListener): RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
 
     interface ClickListener {
         fun onClick(position: Int)
@@ -31,7 +31,7 @@ class MyAdapter(private val dataset: ArrayList<String>, private val mListener: C
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        holder.title.text = dataset.get(position)
+        holder.title.text = dataset[position].name
     }
 
     override fun getItemCount() = dataset.size
